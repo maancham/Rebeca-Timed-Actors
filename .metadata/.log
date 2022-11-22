@@ -1,0 +1,2202 @@
+!SESSION 2021-07-31 08:25:05.289 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 08:25:20.960
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 08:25:21.555
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 08:25:21.557
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-07-31 08:25:21.759
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 08:25:23.041
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 08:25:23.043
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 08:25:23.049
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 08:25:23.050
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 08:25:23.051
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 08:25:23.053
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 08:25:23.057
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 08:25:23.058
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 08:25:23.059
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 08:25:23.060
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 08:25:23.061
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 08:25:23.062
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 08:25:23.063
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 08:25:23.064
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-07-31 10:29:00.427
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-07-31 14:05:56.684 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-07-31 14:05:59.101
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 14:05:59.506
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 14:06:00.047
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 14:06:00.047
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-07-31 14:06:00.157
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 14:06:01.243
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 14:06:01.246
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 14:06:01.250
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 14:06:01.252
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 14:06:01.253
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 14:06:01.255
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 14:06:01.258
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 14:06:01.259
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 14:06:01.260
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 14:06:01.260
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 14:06:01.261
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 14:06:01.262
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 14:06:01.262
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 14:06:01.263
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-07-31 14:13:42.033
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-07-31 16:32:19.404 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-07-31 16:32:21.935
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 16:32:22.331
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 16:32:22.937
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 16:32:22.939
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-07-31 16:32:23.037
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 16:32:24.216
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 16:32:24.219
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 16:32:24.223
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 16:32:24.224
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 16:32:24.225
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 16:32:24.227
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 16:32:24.230
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 16:32:24.231
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 16:32:24.232
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 16:32:24.233
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 16:32:24.235
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 16:32:24.236
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 16:32:24.237
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-07-31 16:32:24.238
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+!SESSION 2021-08-01 12:14:46.728 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-01 12:14:49.699
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 12:14:50.153
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 12:14:50.904
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 12:14:50.906
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-08-01 12:14:51.097
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 12:14:52.497
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 12:14:52.499
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 12:14:52.502
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 12:14:52.504
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 12:14:52.508
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 12:14:52.509
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 12:14:52.512
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 12:14:52.513
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 12:14:52.514
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 12:14:52.515
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 12:14:52.516
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 12:14:52.517
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 12:14:52.520
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 12:14:52.523
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-01 12:40:07.915
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-08-01 23:00:21.896 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-01 23:00:34.898
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 23:00:37.192
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 23:00:39.843
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 23:00:39.844
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-08-01 23:00:40.162
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 23:00:41.894
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 23:00:41.899
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 23:00:41.907
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 23:00:41.908
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 23:00:41.910
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 23:00:41.912
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 23:00:41.918
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 23:00:41.919
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 23:00:41.920
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 23:00:41.920
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 23:00:41.921
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 23:00:41.922
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 23:00:41.927
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-01 23:00:41.928
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-02 00:08:16.811
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-08-02 00:08:36.782 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-02 00:08:40.701
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 00:08:41.300
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 00:08:42.036
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 00:08:42.038
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-08-02 00:08:42.173
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 00:08:43.697
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 00:08:43.703
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 00:08:43.712
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 00:08:43.713
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 00:08:43.717
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 00:08:43.723
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 00:08:43.730
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 00:08:43.733
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 00:08:43.735
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 00:08:43.737
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 00:08:43.738
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 00:08:43.740
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 00:08:43.742
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 00:08:43.744
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-02 09:42:57.721
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-08-02 14:44:26.347 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-02 14:44:28.581
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 14:44:28.943
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 14:44:29.483
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 14:44:29.484
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-08-02 14:44:29.568
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 14:44:30.661
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 14:44:30.663
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 14:44:30.668
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 14:44:30.669
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 14:44:30.670
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 14:44:30.672
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 14:44:30.675
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 14:44:30.676
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 14:44:30.677
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 14:44:30.678
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 14:44:30.678
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 14:44:30.679
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 14:44:30.679
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-02 14:44:30.680
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-02 15:30:30.552
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-08-04 11:12:08.098 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-04 11:12:10.486
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-04 11:12:10.910
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-04 11:12:11.609
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-04 11:12:11.610
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-08-04 11:12:11.706
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-04 11:12:12.821
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-04 11:12:12.823
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-04 11:12:12.826
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-04 11:12:12.827
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-04 11:12:12.828
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-04 11:12:12.829
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-04 11:12:12.832
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-04 11:12:12.832
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-04 11:12:12.833
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-04 11:12:12.833
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-04 11:12:12.834
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-04 11:12:12.834
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-04 11:12:12.835
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-04 11:12:12.835
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-04 11:14:56.762
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-08-07 08:24:33.899 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-07 08:24:36.323
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 08:24:36.837
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 08:24:37.474
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 08:24:37.476
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-08-07 08:24:37.579
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 08:24:38.784
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 08:24:38.786
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 08:24:38.788
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 08:24:38.789
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 08:24:38.790
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 08:24:38.791
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 08:24:38.793
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 08:24:38.794
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 08:24:38.795
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 08:24:38.795
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 08:24:38.796
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 08:24:38.797
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 08:24:38.798
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 08:24:38.798
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-07 11:13:31.853
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-08-07 21:16:09.052 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-07 21:16:11.475
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 21:16:11.872
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 21:16:12.502
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 21:16:12.503
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-08-07 21:16:12.643
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 21:16:13.796
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 21:16:13.798
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 21:16:13.802
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 21:16:13.803
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 21:16:13.804
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 21:16:13.806
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 21:16:13.809
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 21:16:13.810
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 21:16:13.810
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 21:16:13.811
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 21:16:13.812
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 21:16:13.813
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 21:16:13.813
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-07 21:16:13.814
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-07 21:56:42.782
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-08-08 11:58:22.672 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-08 11:58:24.681
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-08 11:58:25.073
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-08 11:58:25.606
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-08 11:58:25.607
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-08-08 11:58:25.703
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-08 11:58:26.777
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-08 11:58:26.780
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-08 11:58:26.785
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-08 11:58:26.786
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-08 11:58:26.787
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-08 11:58:26.789
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-08 11:58:26.792
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-08 11:58:26.793
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-08 11:58:26.794
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-08 11:58:26.795
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-08 11:58:26.796
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-08 11:58:26.797
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-08 11:58:26.797
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-08 11:58:26.798
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-08 12:20:07.547
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-08-15 09:05:50.103 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-15 09:05:55.001
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 09:05:55.833
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 09:05:56.716
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 09:05:56.717
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-08-15 09:05:56.864
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 09:05:58.183
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 09:05:58.184
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 09:05:58.189
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 09:05:58.189
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 09:05:58.191
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 09:05:58.192
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 09:05:58.194
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 09:05:58.195
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 09:05:58.196
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 09:05:58.196
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 09:05:58.197
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 09:05:58.198
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 09:05:58.198
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 09:05:58.199
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-15 11:58:15.036
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-08-15 11:58:47.323 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-15 11:58:49.534
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 11:58:49.920
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 11:58:50.493
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 11:58:50.494
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-08-15 11:58:50.580
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 11:58:51.691
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 11:58:51.694
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 11:58:51.699
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 11:58:51.700
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 11:58:51.701
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 11:58:51.702
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 11:58:51.708
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 11:58:51.709
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 11:58:51.710
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 11:58:51.710
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 11:58:51.711
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 11:58:51.712
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 11:58:51.713
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-15 11:58:51.713
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-15 11:59:15.297
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-08-22 19:26:02.936 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-22 19:26:07.415
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-22 19:26:08.205
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-22 19:26:09.116
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-22 19:26:09.118
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-08-22 19:26:09.244
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-22 19:26:10.413
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-22 19:26:10.415
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-22 19:26:10.420
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-22 19:26:10.421
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-22 19:26:10.423
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-22 19:26:10.425
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-22 19:26:10.428
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-22 19:26:10.429
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-22 19:26:10.430
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-22 19:26:10.431
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-22 19:26:10.432
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-22 19:26:10.432
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-22 19:26:10.433
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-22 19:26:10.434
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-22 21:57:00.193
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-08-26 14:18:05.718 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-26 14:18:10.594
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-26 14:18:11.377
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-26 14:18:12.253
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-26 14:18:12.253
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-08-26 14:18:12.352
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-26 14:18:13.615
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-26 14:18:13.618
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-26 14:18:13.623
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-26 14:18:13.624
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-26 14:18:13.625
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-26 14:18:13.627
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-26 14:18:13.629
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-26 14:18:13.630
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-26 14:18:13.631
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-26 14:18:13.632
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-26 14:18:13.633
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-26 14:18:13.634
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-26 14:18:13.635
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-26 14:18:13.636
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-26 18:08:31.315
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-08-29 13:54:52.765 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-29 13:54:57.851
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:54:58.769
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:54:59.842
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:54:59.842
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-08-29 13:54:59.947
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:01.246
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:01.249
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:01.254
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:01.255
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:01.257
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:01.259
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:01.263
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:01.264
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:01.265
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:01.266
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:01.268
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:01.269
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:01.270
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:01.271
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-29 13:55:29.946
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-08-29 13:55:32.996 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-29 13:55:35.127
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:35.504
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:36.083
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:36.084
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-08-29 13:55:36.181
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:37.317
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:37.319
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:37.322
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:37.323
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:37.324
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:37.326
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:37.329
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:37.330
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:37.331
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:37.332
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:37.333
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:37.334
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:37.334
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-29 13:55:37.335
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-29 14:07:46.798
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-08-30 08:26:15.048 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-30 08:26:19.193
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 08:26:20.019
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 08:26:20.904
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 08:26:20.905
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-08-30 08:26:20.995
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 08:26:22.141
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 08:26:22.143
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 08:26:22.152
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 08:26:22.153
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 08:26:22.154
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 08:26:22.156
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 08:26:22.158
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 08:26:22.159
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 08:26:22.160
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 08:26:22.160
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 08:26:22.161
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 08:26:22.162
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 08:26:22.163
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 08:26:22.163
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-30 09:17:31.901
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-08-30 09:19:32.364 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-30 09:19:34.450
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 09:19:34.873
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 09:19:35.453
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 09:19:35.454
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-08-30 09:19:35.560
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 09:19:36.701
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 09:19:36.703
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 09:19:36.708
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 09:19:36.709
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 09:19:36.711
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 09:19:36.712
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 09:19:36.715
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 09:19:36.715
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 09:19:36.717
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 09:19:36.717
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 09:19:36.718
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 09:19:36.719
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 09:19:36.719
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-08-30 09:19:36.720
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-08-30 09:30:24.727
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-09-01 08:35:06.479 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-09-01 08:35:12.080
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-01 08:35:13.120
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-01 08:35:14.236
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-01 08:35:14.237
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-09-01 08:35:14.351
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-01 08:35:15.736
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-01 08:35:15.739
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-01 08:35:15.743
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-01 08:35:15.744
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-01 08:35:15.745
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-01 08:35:15.747
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-01 08:35:15.750
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-01 08:35:15.751
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-01 08:35:15.752
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-01 08:35:15.753
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-01 08:35:15.755
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-01 08:35:15.756
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-01 08:35:15.757
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-01 08:35:15.758
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-09-01 08:56:45.389
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-09-04 17:29:02.081 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-09-04 17:29:06.719
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-04 17:29:07.548
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-04 17:29:08.401
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-04 17:29:08.402
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-09-04 17:29:08.493
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-04 17:29:09.726
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-04 17:29:09.727
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-04 17:29:09.731
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-04 17:29:09.732
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-04 17:29:09.733
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-04 17:29:09.735
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-04 17:29:09.738
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-04 17:29:09.740
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-04 17:29:09.740
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-04 17:29:09.741
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-04 17:29:09.742
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-04 17:29:09.743
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-04 17:29:09.743
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-04 17:29:09.744
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.ui 4 0 2021-09-04 18:45:12.217
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.ui.internal.EditorSiteDragAndDropServiceImpl$MergedDropTarget$1.dragLeave(EditorSiteDragAndDropServiceImpl.java:117)
+	at org.eclipse.swt.dnd.DNDListener.handleEvent(DNDListener.java:74)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1043)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1067)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1052)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:766)
+	at org.eclipse.swt.dnd.DropTarget.Drop(DropTarget.java:415)
+	at org.eclipse.swt.dnd.DropTarget.Drop_64(DropTarget.java:401)
+	at org.eclipse.swt.dnd.DropTarget$1.method6(DropTarget.java:265)
+	at org.eclipse.swt.internal.ole.win32.COMObject.callback6(COMObject.java:120)
+	at org.eclipse.swt.internal.ole.win32.COM.DoDragDrop(Native Method)
+	at org.eclipse.swt.dnd.DragSource.drag(DragSource.java:541)
+	at org.eclipse.swt.dnd.DragSource.lambda$0(DragSource.java:380)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1043)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4026)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-09-05 14:20:56.509
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-09-06 08:18:36.408 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-09-06 08:18:41.428
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-06 08:18:42.508
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-06 08:18:43.456
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-06 08:18:43.457
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-09-06 08:18:43.578
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-06 08:18:44.935
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-06 08:18:44.937
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-06 08:18:44.942
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-06 08:18:44.943
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-06 08:18:44.944
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-06 08:18:44.946
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-06 08:18:44.949
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-06 08:18:44.951
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-06 08:18:44.952
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-06 08:18:44.953
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-06 08:18:44.954
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-06 08:18:44.955
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-06 08:18:44.955
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-06 08:18:44.956
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-09-06 08:41:48.502
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-09-11 12:40:08.396 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -clearPersistedState
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clearPersistedState
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-09-11 12:40:14.531
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-11 12:40:15.669
+!MESSAGE Unable to load class 'org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler' from bundle '55'
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler cannot be found by org.eclipse.e4.ui.workbench.renderers.swt_0.15.0.v20201125-0918
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:519)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:617)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:89)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:276)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:573)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.rebecalang.afra.ideplugin.Application.start(Application.java:132)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-11 12:40:16.632
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.nextannotation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-11 12:40:16.633
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledtoolitem.previousannotation invalid, no command defined.
+
+!ENTRY org.eclipse.ui 2 2 2021-09-11 12:40:16.758
+!MESSAGE Perspective with name 'My Perspective' and id 'org.rebecalang.afra.ideplugin.perspective' has been made into a local copy
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-11 12:40:18.119
+!MESSAGE Element org.eclipse.e4.ui.importer.openDirectory.menu invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-11 12:40:18.122
+!MESSAGE Element revert invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-11 12:40:18.126
+!MESSAGE Element bookmark invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-11 12:40:18.127
+!MESSAGE Element addTask invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-11 12:40:18.129
+!MESSAGE Element org.eclipse.jdt.debug.ui.command.OpenFromClipboard invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-11 12:40:18.131
+!MESSAGE Element org.rebecalang.afra.ideplugin.handledmenuitem.lasteditlocation invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-11 12:40:18.134
+!MESSAGE Element org.eclipse.ui.window.newEditor invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-11 12:40:18.136
+!MESSAGE Element org.eclipse.ui.ToggleCoolbarAction invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-11 12:40:18.137
+!MESSAGE Element org.eclipse.ui.window.togglestatusbar invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-11 12:40:18.139
+!MESSAGE Element org.eclipse.ui.window.fullscreenmode invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-11 12:40:18.140
+!MESSAGE Element resetPerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-11 12:40:18.141
+!MESSAGE Element org.eclipse.ui.window.maximizePart invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-11 12:40:18.142
+!MESSAGE Element savePerspective invalid, no command defined.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-09-11 12:40:18.143
+!MESSAGE Element org.eclipse.ui.window.minimizePart invalid, no command defined.
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-09-11 12:42:03.690
+!MESSAGE The workspace will exit with unsaved changes in this session.

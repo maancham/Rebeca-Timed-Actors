@@ -1,0 +1,232 @@
+// QoS properties
+env int N_INI =  5;//3:1 ;5;
+env int L_INI = 40;//30;
+env int N_EXE = 5;//12;
+env int L_EXE = 10;//5;
+// action definitions
+env int START_VENTILATOR = 1;
+env int STOP_VENTILATOR = 0;
+env int START_X_RAY = 2;
+env int STOP_X_RAY = 3;
+env int FAIL = 0;
+env int SUCCEED = 1;
+env int UNAVAILABLE = 2;
+//--------------------------------------------------------------
+abstract reactiveclass Base(20) {
+    statevars {
+    	int id;
+    }
+    Base find(int _id) {
+    	ArrayList<ReactiveClass> allActors = getAllActors();
+    	for(int i = 0 ; i < allActors.size(); i++) {
+			Base actor = (Base) allActors.get(i);
+			if (actor.id == _id) {
+				return actor;
+			}
+	}
+    }
+     msgsrv busy(){
+     	delay(1);
+    	self.busy();
+    }
+}
+//--------------------------------------------------------------
+abstract reactiveclass Service extends Base(20) {        
+    abstract msgsrv execute(int action, int Lm);
+}
+//--------------------------------------------------------------
+reactiveclass Supervisor extends Base(20) {
+	knownrebecs {
+		InitiateRequester IR_VENTILATOR;
+		InitiateRequester IR_X_RAY;
+	}
+	statevars {}
+	Supervisor(int _id) {
+		id = _id;
+		self.initiate() after(3);
+	}
+	msgsrv initiate() {
+		int iniDelay = ?(1, 2, 3);
+		IR_VENTILATOR.initiate(STOP_VENTILATOR, iniDelay + 3) after(iniDelay);
+	}
+	msgsrv ack(int action, int actionStatus, int Lm) {
+		int ackDelay = ?(1, 2, 3);
+		if(action == STOP_VENTILATOR && actionStatus == SUCCEED) {
+			IR_X_RAY.initiate(START_X_RAY, ackDelay) after(ackDelay);
+		}else if(action == STOP_X_RAY && actionStatus == SUCCEED) {
+			IR_VENTILATOR.initiate(START_VENTILATOR, ackDelay) after(ackDelay);
+		}else if(action == START_X_RAY && actionStatus == SUCCEED) {
+			delay(2);
+			IR_X_RAY.initiate(STOP_X_RAY, ackDelay) after(ackDelay + 2);
+		}else {
+			//assertion(false);
+			self.busy();	
+		}
+	}
+	msgsrv fastInitiateFailure(int action, int Lm) {self.busy();} 
+	msgsrv timeOutFailure(int action, int actionStatus, int Lm) {self.busy();} 
+	msgsrv excessLoadFailure(int action, int Lm) {self.busy();}
+}
+//--------------------------------------------------------------
+reactiveclass InitiateRequester extends Base(20) {
+	knownrebecs {
+		CommunicationSubstrate cs;
+	}
+	statevars {
+		int lastIni;
+		int supervisorId;
+		int invokerId;
+		}
+	 InitiateRequester(int _id, int _supervisorId, int _invokerId) {
+	 	 lastIni = 0;
+		 id = _id;
+		 supervisorId = _supervisorId;
+		 invokerId = _invokerId;
+	}
+	msgsrv initiate(int action, int Lm) { 
+		int IR1Delay; 
+		IR1Delay = ?( 2, 3);
+		Supervisor s = (Supervisor) find(supervisorId);
+		int time = now;
+		if(time - lastIni < N_INI){
+			//assertion( false,"IR:initiate"); //sc2
+			s.fastInitiateFailure(action, Lm + IR1Delay);
+		}
+		else {
+			lastIni = now;
+			cs.initiate(action, Lm + IR1Delay, invokerId) after(IR1Delay);
+		}
+	}
+	msgsrv ack(int action, int actionStatus, int Lm) { 
+		int IR2Delay;
+		IR2Delay = ?(1, 2, 3);
+		Lm = Lm + IR2Delay;
+		int time = now;
+		Supervisor s = (Supervisor) find(supervisorId);
+		if(time - lastIni >= L_INI) {
+			assertion(false,"IR:ack");
+			s.timeOutFailure(action, actionStatus, Lm);
+		}
+		else if(IR2Delay < L_INI) { 
+			s.ack(action, actionStatus, Lm) after(IR2Delay);	
+		}
+	}
+	msgsrv excessLoadFailure(int action, int Lm) {
+		Supervisor s = (Supervisor) find(supervisorId);
+		s.excessLoadFailure(action, Lm);
+	}
+	msgsrv timeOutFailure(int action, int actionStatus, int Lm) {
+		Supervisor s = (Supervisor) find(supervisorId);
+		s.timeOutFailure(action, actionStatus, Lm);
+	}
+}
+//--------------------------------------------------------------
+reactiveclass CommunicationSubstrate extends Base(20) {
+	CommunicationSubstrate(int _id) {
+		id = _id;
+	}
+	msgsrv initiate(int action, int Lm, int invokerId) { 
+		int csDelay = ?( 2, 3,4); 
+		ExecuteInvoker ei = (ExecuteInvoker) find(invokerId);
+		ei.initiate(action, Lm + csDelay) after(csDelay);
+		}
+	msgsrv ack(int action, int actionStatus, int Lm, int initiatorId) {
+		int cs2Delay = ?( 3,4,5); 
+		InitiateRequester ir = (InitiateRequester) find(initiatorId);
+		ir.ack(action , actionStatus, Lm + cs2Delay) after(cs2Delay);
+	}
+	msgsrv excessLoadFailure(int action, int Lm, int initiatorId) {
+	    InitiateRequester ir = (InitiateRequester) find(initiatorId);
+		ir.excessLoadFailure(action, Lm);
+	}
+	msgsrv timeOutFailure(int action, int actionStatus, int Lm, int initiatorId) {
+		InitiateRequester ir = (InitiateRequester) find(initiatorId);
+		ir.timeOutFailure(action, actionStatus, Lm);
+	}
+}
+//--------------------------------------------------------------
+reactiveclass ExecuteInvoker extends Base(20) {
+    knownrebecs {
+		CommunicationSubstrate cs;
+	}
+	statevars {
+		int lastIni; 
+		int serviceId;
+		int initiatorId;
+	}
+	 ExecuteInvoker(int _id, int _serviceId, int _initiatorId) {
+	 	lastIni = 0;
+	 	id = _id;
+	 	serviceId = _serviceId;
+	 	initiatorId = _initiatorId;
+	}
+	msgsrv initiate(int action, int Lm) { 
+		int EI1Delay;
+		EI1Delay = ?( 2, 3); 
+		int time = now;
+		Lm = Lm + EI1Delay;
+		Service s = (Service) find(serviceId);
+		if (time - lastIni < N_EXE) { 
+			assertion(false,"EI:initiate");//( "EI:initiate",false);
+			cs.excessLoadFailure(action, Lm, initiatorId);
+		} 
+		else {
+			lastIni = now;
+			s.execute(action, Lm) after(EI1Delay);
+		}
+	}
+	msgsrv ack(int action, int actionStatus, int Lm) { 
+		int time = now;
+		int EI2Delay;
+		EI2Delay = ?(3, 4, 5); 
+		if (time - lastIni > L_EXE) { 
+			assertion(false,"EI:ack");
+			cs.timeOutFailure(action, actionStatus, Lm + EI2Delay, initiatorId);
+		}
+		else { 
+			cs.ack(action, actionStatus, Lm + EI2Delay, initiatorId) after(EI2Delay);
+		}
+	}
+}
+//--------------------------------------------------------------
+reactiveclass Ventilator extends Service(20) {
+	knownrebecs {
+		ExecuteInvoker EI_Ventilator;
+	}
+	Ventilator(int _id) {
+		id = _id;
+	}
+	msgsrv execute(int action, int Lm) {
+		int exeDelay = ?(1, 2, 3);
+		int actionStatus = 1;//?(0, 1, 2);
+		EI_Ventilator.ack(action, actionStatus, Lm) after(exeDelay);
+	}
+}
+//--------------------------------------------------------------
+reactiveclass X_Ray extends Service(20) {
+	knownrebecs {
+		ExecuteInvoker EI_X_RAY;
+	}
+	X_Ray(int _id) {
+		id = _id;
+	}
+	msgsrv execute(int action, int Lm) {
+		int exeDelay = ?(1, 2, 3);
+		int actionStatus = 1;//?(0, 1, 2);
+		EI_X_RAY.ack(action, actionStatus, Lm) after(exeDelay);
+	}
+}
+//--------------------------------------------------------------
+main {
+	Supervisor s(ir_v, ir_x):(0);
+	
+	InitiateRequester ir_v(cs):(1, 0, 2);
+	ExecuteInvoker ei_v(cs):(2, 3, 1);
+	Ventilator v(ei_v):(3);
+	
+	InitiateRequester ir_x(cs):(4, 0, 5);
+	ExecuteInvoker ei_x(cs):(5, 6, 4);
+	X_Ray x(ei_x):(6);
+	
+	CommunicationSubstrate cs():(7);
+}

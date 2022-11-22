@@ -1,0 +1,163 @@
+env int NPUB = 4;
+env int LPUB = 6;
+env int NSUB = 7;
+env int XSUB = 20;
+env int LSUB = 5;
+env int RPUB = 40;
+env int RSUB = 5;
+env int consumptionTolerance = 10;
+reactiveclass Client(20) {
+	knownrebecs {
+		PublishRequester PR;
+	}
+	statevars {
+	}
+	 Client() {
+	    self.publish() after(3);
+	}
+	msgsrv publish(){
+	  int clientDelay;
+		clientDelay = ?(3, 4);
+		delay(clientDelay);
+		int life = 30;
+		PR.publish(clientDelay + 3 , life);
+	}
+	  msgsrv busy(){
+     	delay(1);
+    	self.busy();
+    }
+	msgsrv accepted() {self.busy();}
+	msgsrv fastPublicationFailure() {self.busy();} // Handle sending requests in short intervals (based on nReq)
+	msgsrv timeOutFailure() {self.busy();} // Response was not provided in the required time frame (based on lReq, lRes)
+	
+}
+
+reactiveclass PublishRequester(20) {  //check QOS properties
+	knownrebecs {
+		CommunicationSubstrate cs;
+		Client c;
+	}
+	statevars {
+		int lastPub; // Last request time, used for nReq comparison.
+		int PR1Delay;
+		boolean theFirsttime;
+	}
+	 PublishRequester() {
+		lastPub = 0;
+		theFirsttime = true;
+	}
+	msgsrv publish(int Lm , int life) { // request data from responder through communication substrate 
+		PR1Delay = ?(1, 2);
+		//delay(RR1Delay);
+		int time = now;
+		if(time - lastPub < NPUB & !(theFirsttime)){
+			c.fastPublicationFailure();
+		}
+		 if(PR1Delay > LPUB) { // lReq has been violated
+				c.timeOutFailure();
+			}
+		 else{
+			lastPub = now;
+			cs.publish(Lm + PR1Delay , life - PR1Delay) after(PR1Delay);
+			c.accepted() after(PR1Delay);
+		}
+		theFirsttime = false;
+	}
+}
+
+reactiveclass CommunicationSubstrate(20) {  // Latency
+	knownrebecs {
+		SubscribeInvoker si;
+	}
+	statevars {
+	
+	}
+	 CommunicationSubstrate() {
+	
+	}
+	msgsrv publish(int Lm , int life) { // Transfer data request from client to the server
+			int csDelay = ?(1, 2); 
+				si.publish(Lm + csDelay , life - csDelay) after(csDelay);
+		}
+}
+
+reactiveclass SubscribeInvoker(20) {  //check QOS
+	knownrebecs {
+		CommunicationSubstrate cs;
+		Service s;
+	}
+	statevars {
+		int lastPub; // Time that last data request was recieved, used for nRes comparison
+		boolean theFirsttime;
+	}
+	 SubscribeInvoker() {
+		lastPub = 0;
+		theFirsttime = true;
+	}
+	//responder to requester
+	msgsrv publish(int Lm , int life) { // Send request response through communication substrate
+		int SI1Delay;
+		SI1Delay = ?(1, 2); 
+		int time = now;
+		if (time - lastPub < NSUB & !(theFirsttime)) { // Request has arrived too fast too be handled
+			self.drop(Lm);
+		} 
+		 if (time - lastPub > XSUB) { // Request has arrived too fast too be handled
+			s.slowPublication(Lm);
+		} 
+		 if (life < RSUB || Lm > RPUB) { // Request has arrived too fast too be handled
+			s.staleData(Lm);
+		} 
+		else {
+			lastPub = now;
+			s.publish(Lm + SI1Delay) after(SI1Delay); // Ask service for data response
+		}
+		theFirsttime = false;
+	}
+	//requester to responder
+	msgsrv consumed(int Lm) { // Receive provided response and deliver it to the requester throught communication substrate
+		int time = now;
+		int SI2Delay;
+		SI2Delay = ?(1, 2); 
+		if (time - lastPub > LSUB) { //  Response was not provided in lRes time units
+			s.slowConsumption(Lm + SI2Delay);
+		}	
+	}
+	msgsrv busy(){
+		delay(1);
+		self.busy();}
+	msgsrv drop(int Lm){self.busy();}
+}
+
+reactiveclass Service(20) {
+	knownrebecs{
+		SubscribeInvoker si;
+	}
+	statevars {
+	int transmitionTime;
+	}
+	 Service() {
+	 transmitionTime = 0;
+	}
+	msgsrv publish(int Lm) {
+		int consumeDelay = ?(1, 2); // Random reponse prepration delay
+		delay(consumeDelay);
+		transmitionTime = Lm;
+		si.consumed(Lm + consumeDelay); // Add computation delay to network delay and send response through communication substrate
+	}
+	msgsrv busy(){ //busy waiting to avoid deadlock
+		delay(1);
+		self.busy();
+	}
+	msgsrv slowConsumption(int Lm){self.busy();}
+	msgsrv staleData(int Lm){self.busy();}
+	msgsrv slowPublication(int Lm){self.busy();}
+}
+
+main {
+	Client c(pr):();
+	PublishRequester pr(cs, c):();
+	CommunicationSubstrate cs(si):();
+	SubscribeInvoker si(cs, s):();
+	Service s(si):();
+}

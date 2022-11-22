@@ -1,0 +1,186 @@
+reactiveclass Client(20) {
+	knownrebecs {
+		SendRequester SR;
+	}
+	statevars {
+		int TotalLatency;
+	}
+	 Client() {
+	    TotalLatency = 0;
+	    self.send() after(3);
+	}
+	msgsrv send(){
+	  int clientDelay;
+		clientDelay = ?(1,2);
+		delay(clientDelay);
+		SR.send(clientDelay + 3);
+	}
+
+	msgsrv ack(int Lm) {
+		TotalLatency = Lm;
+		self.busy();
+	} // Consume request response
+	 msgsrv busy(){ //busy waiting to avoid deadlock
+		self.busy();
+	}
+	msgsrv fastSendFailure(int Lm) {self.busy();} // Handle sending requests in short intervals (based on nReq)
+	msgsrv timeOutFailure(int Lm) {self.busy();} // Response was not provided in the required time frame (based on lReq, lRes)
+	msgsrv excessLoadFailure(int Lm) {self.busy();} // Responder is recieving requests too fast (based on nRes)
+	}
+
+reactiveclass SendRequester(20) {  //check QOS properties
+	knownrebecs {
+		CommunicationSubstrate cs;
+		Client c;
+	}
+	statevars {
+		int nSen; // Minimum Separation between consecutive requests.
+		int lSen; // Maximum Latency between the sending of a request and the arrival of the corresponding response.
+		int lastSend; // Last request time, used for nReq comparison.
+		int time; // Current time.
+		boolean theFirsttime;
+		}
+	 SendRequester() {
+		nSen = 3;
+		lSen = 20;
+		time = 0;
+		lastSend = 0;
+		theFirsttime = true;
+	}
+	msgsrv send(int Lm) { // request data from responder through communication substrate
+		int SR1Delay; 
+		SR1Delay = ?(1, 2);
+		//delay(RR1Delay);
+		time = now;
+		if(time - lastSend < nSen & !(theFirsttime)){
+			c.fastSendFailure(Lm + SR1Delay);
+		}
+		else {
+			lastSend = now;
+			cs.send(Lm + SR1Delay) after(SR1Delay);
+		}
+		theFirsttime = false;
+	}
+	msgsrv ack(int Lm) { // send back response to the client
+		int SR2Delay;
+		SR2Delay = ?(1, 2);
+			Lm = Lm + SR2Delay;
+			time = now;
+			if(time - lastSend >= lSen) { // lReq has been violated
+				c.timeOutFailure(Lm);
+			}
+			else if(SR2Delay < lSen) { // rReq has been met, it has not timed out, and lReq has also been met
+				c.ack(Lm) after(SR2Delay);
+				
+			}
+			
+	}
+	msgsrv excessLoadFailure(int Lm) {
+		c.excessLoadFailure(Lm);
+	}
+	msgsrv timeOutFailure(int Lm) {
+		c.timeOutFailure(Lm);
+	}
+}
+
+reactiveclass CommunicationSubstrate(20) {  // Latency
+	knownrebecs {
+		SendRequester SR; 
+		ReceiveInvoker RI;
+	}
+	statevars {
+	
+	}
+	 CommunicationSubstrate() {
+	
+	}
+	msgsrv send(int Lm) { // Transfer data request from client to the server
+			int cs1Delay = ?(1, 2); 
+				RI.send(Lm + cs1Delay) after(cs1Delay);
+		}
+	msgsrv ack(int Lm) { // Transfer data reponse from server to the client
+			int cs2Delay = ?(1, 2); // Network delay between server and commnunication substrate
+				SR.ack((Lm + cs2Delay)) after(cs2Delay);
+	}
+	msgsrv excessLoadFailure(int Lm) {
+			SR.excessLoadFailure(Lm);
+	}
+	msgsrv timeOutFailure(int Lm) {
+			SR.timeOutFailure(Lm);
+	}
+}
+
+reactiveclass ReceiveInvoker(20) {  //check QOS
+	knownrebecs {
+		CommunicationSubstrate cs;
+		Service s;
+	}
+	statevars {
+		int time; // Current time.
+		int nRec; // Minimum Separation between the arrival of consecutive requests.
+		int lastSend; // Time that last data request was recieved, used for nRes comparison
+		int lRec; // Maximum Latency between receiving a request and providing the response to the communication substrate.
+		boolean theFirsttime;
+	}
+	 ReceiveInvoker() {
+	 	nRec = 5;
+	 	lRec = 12;
+		time = 0;
+		lastSend = 0;
+		theFirsttime = true;
+		}
+	//responder to requester
+	msgsrv send(int Lm) { // Send request response through communication substrate
+		//boolean canRespond = true; // Is it feasible to provide the request response?
+		int RI1Delay;
+		RI1Delay = ?(1, 2); 
+		//delay(RI1Delay);
+		time = now;
+		Lm = Lm + RI1Delay;
+		if (time - lastSend < nRec  & !(theFirsttime)) { // Request has arrived too fast too be handled
+			cs.excessLoadFailure(Lm);
+		} 
+		else {
+			lastSend = now;
+			s.send(Lm) after(RI1Delay); // Ask service for data response
+		}
+		theFirsttime = false;
+	}
+	//requester to responder
+	msgsrv ack(int Lm) { // Receive provided response and deliver it to the requester throught communication substrate
+		time = now;
+		int RI2Delay;
+		RI2Delay = ?(1, 2); 
+		if (time - lastSend > lRec) { //  Response was not provided in lRes time units
+			cs.timeOutFailure(Lm + RI2Delay);
+		}
+		else { // Recieved response is still valid
+			cs.ack(Lm + RI2Delay) after(RI2Delay);
+			
+		}
+		
+	}
+}
+
+reactiveclass Service(20) {
+	knownrebecs{
+		ReceiveInvoker RI;
+	}
+	statevars {}
+	 Service() {
+	}
+	msgsrv send(int Lm) {
+		int computeDelay = ?(1, 2); // Random reponse prepration delay
+		delay(computeDelay);
+		RI.ack(Lm + computeDelay); // Add computation delay to network delay and send response through communication substrate
+	}
+	
+}
+
+main {
+	Client c(sr):();
+	SendRequester sr(cs, c):();
+	CommunicationSubstrate cs(sr, ri):();
+	ReceiveInvoker ri(cs, s):();
+	Service s(ri):();
+}

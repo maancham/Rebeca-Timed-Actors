@@ -1,0 +1,211 @@
+env int NREQ = 2;
+env int LREQ = 30;
+env int RREQ = 15;
+env int NRES = 7;
+env int LRES = 5;
+env int RRES = 10;
+reactiveclass Client(20) {
+	knownrebecs {
+		RequestRequester RR;
+	}
+	statevars {
+		int TotalLatency;
+	
+	}
+	 Client() {
+	    self.request() after(3);
+	}
+	msgsrv request(){
+		int rDelay = ?(2, 3);
+		delay(rDelay);
+		RR.request(rDelay + 3);
+	}
+
+	msgsrv response(int Lm) {
+		TotalLatency = Lm;
+		self.busy();
+	} // Consume request response
+	 msgsrv busy(){ //busy waiting to avoid deadlock
+		delay(1);
+		self.busy();
+	}
+	msgsrv fastRequestFailure() {self.busy();} // Handle sending requests in short intervals (based on nReq)
+	msgsrv timeOutFailure() {self.busy();} // Response was not provided in the required time frame (based on lReq, lRes)
+	msgsrv excessLoadFailure() {self.busy();} // Responder is recieving requests too fast (based on nRes)
+	msgsrv dataUnavailableFailure() {self.busy();} // A reponse with the required minimum life time could not be provided (based on rRes)
+	msgsrv staleData() {self.busy();} // Response life time is shorter than the required time units (based on rReq)
+	
+}
+
+reactiveclass RequestRequester(20) {  //check QOS properties
+	knownrebecs {
+		CommunicationSubstrate cs;
+		Client c;
+	}
+	statevars {
+		//int lastReq; // The time that a response was requested, used for lReq comparison. // TODO: This should be stored per meesage, but for now it keeps track of last request and -1 means that the last request is not waiting a reponse
+		Timer lastReq;
+		boolean theFirsttime;
+	}
+	 RequestRequester() {
+		//lastReq = 0;
+		stopTimer(lastReq);
+		theFirsttime = true;
+	}
+	msgsrv request(int Lm) { // request data from responder through communication substrate
+		int RR1Delay; 
+		RR1Delay = 2;
+		//int time = now;
+		int passedTime = getTimerValue(lastReq);
+		stopTimer(lastPub);
+		if(passedTime < NREQ & !(theFirsttime)){
+			c.fastRequestFailure();
+		}
+		else {
+			//lastReq = now;
+			startTimer(lastReq);
+			cs.request(Lm + RR1Delay) after(RR1Delay);
+		}
+		theFirsttime = false;
+	}
+	msgsrv response(int Lm , int life) { // send back response to the client
+		boolean canConsume = true; // Whether this message usable by the client
+		int RR2Delay;
+		RR2Delay = 2;
+		Lm = Lm + RR2Delay;
+		//int time = now;
+		int passedTime = getTimerValue(lastReq);
+		stopTimer(lastPub);
+		if (life > 0 && life < RREQ) { // Remaining message life time is not enough
+			c.staleData();
+			canConsume = false;
+		}
+		if(passedTime >= LREQ) { // lReq has been violated
+			c.timeOutFailure();
+		}
+		else if(canConsume  && RR2Delay < LREQ) { // rReq has been met, it has not timed out, and lReq has also been met
+			c.response(Lm) after(RR2Delay);				
+		}
+			
+	}
+	msgsrv excessLoadFailure() {
+		c.excessLoadFailure();
+	}
+	msgsrv timeOutFailure() {
+		c.timeOutFailure();
+	}
+	msgsrv dataUnavailableFailure(){
+		c.dataUnavailableFailure();
+	}
+}
+
+reactiveclass CommunicationSubstrate(20) {  // Latency
+	knownrebecs {
+		RequestRequester RR; 
+		ResponderInvoker RI;
+	}
+	statevars {
+	
+	}
+	 CommunicationSubstrate() {
+	
+	}
+	msgsrv request(int Lm) { // Transfer data request from client to the server
+			int cs1Delay = ?(1, 2);
+			// Transfer this message to the corresponding responder
+				RI.request(Lm + cs1Delay) after(cs1Delay);
+		}
+	msgsrv response(int Lm, int life) { // Transfer data reponse from server to the client
+			int cs2Delay = ?(1, 2); // Network delay between server and commnunication substrate
+			// Transfer this response to the corresponding requester
+				RR.response((Lm + cs2Delay), (life-cs2Delay)) after(cs2Delay);
+	}
+	msgsrv excessLoadFailure() {
+			RR.excessLoadFailure();
+	}
+	msgsrv timeOutFailure() {
+			RR.timeOutFailure();
+	}
+	msgsrv dataUnavailableFailure() {
+			RR.dataUnavailableFailure();
+	}
+}
+
+reactiveclass ResponderInvoker(20) {  //check QOS
+	knownrebecs {
+		CommunicationSubstrate cs;
+		Service s;
+	}
+	statevars {
+		//int lastReq; // Time when a request was send, used for lRes comparison // TODO: This should be stored per meesage, but for now it keeps track of last request and -1 means nothing exists
+		Timer lastReq;
+		boolean theFirsttime;
+	}
+	 ResponderInvoker() {
+		//lastReq = 0;
+		stopTimer(lastReq);
+		theFirsttime = true;
+	}
+	//responder to requester
+	msgsrv request(int Lm) { // Send request response through communication substrate
+		int RI1Delay;
+		RI1Delay = 2; 
+		//int time = now;
+		Lm = Lm + RI1Delay;
+		int passedTime = getTimerValue(lastReq);
+		stopTimer(lastPub);
+		if (passedTime < NRES & !(theFirsttime)) { // Request has arrived too fast too be handled
+			cs.excessLoadFailure();
+
+		} 
+		else {
+			//lastReq = now;
+			startTimer(lastReq);
+			s.response(Lm) after(RI1Delay); // Ask service for data response
+		}
+		theFirsttime = false;
+	}
+	//requester to responder
+	msgsrv response(int Lm , int life) { // Receive provided response and deliver it to the requester throught communication substrate
+		//int time = now;
+		int passedTime = getTimerValue(lastReq);
+		stopTimer(lastPub);
+		int RI2Delay;
+		RI2Delay = 2; 
+		if (life < RRES) { // Reponse life time can not comply with rRes any more
+			cs.dataUnavailableFailure();
+		}
+		if (passedTime > LRES) { //  Response was not provided in lRes time units
+			cs.timeOutFailure();
+		}
+		else { // Recieved response is still valid
+			cs.response(Lm + RI2Delay , life - RI2Delay) after(RI2Delay);
+			
+		}
+		
+	}
+}
+
+reactiveclass Service(20) {
+	knownrebecs{
+		ResponderInvoker RI;
+	}
+	statevars {}
+	 Service() {
+	}
+	msgsrv response(int Lm) {
+		int computeDelay = ?(1, 2); // Random reponse prepration delay
+		int life = 30;
+		delay(computeDelay);
+		RI.response(Lm + computeDelay, life); // Add computation delay to network delay and send response through communication substrate
+	}
+	
+}
+
+main {
+	Client c(rr):();
+	RequestRequester rr(cs, c):();
+	CommunicationSubstrate cs(rr, ri):();
+	ResponderInvoker ri(cs, s):();
+	Service s(ri):();
+}

@@ -1,0 +1,460 @@
+env int CAP_ETCO2 = 0;
+env int CAP_RESPIRATORYRATE = 1;
+env int OX_SPO2 = 2;
+env int OX_PULSERATE = 3;
+env boolean ACTIVE = true;
+env boolean INACTIVE = false;
+//req-res QOS
+env int NREQ = 2;
+env int LREQ = 25;
+env int RREQ = 15;
+env int NRES = 5;
+env int LRES = 5;
+env int RRES = 10;
+//pub-sub QOS
+env int NPUB = 2;
+env int LPUB = 6;
+env int NSUB = 7;
+env int XSUB = 20;
+env int LSUB = 5;
+env int RPUB = 30;
+env int RSUB = 5;
+env int consumptionTolerance = 5;
+//----------------------------------------------------------------
+abstract reactiveclass Base(20) {
+    statevars {
+    	int id;
+    }
+    Base find(int _id) {
+    	ArrayList<ReactiveClass> allActors = getAllActors();
+    	for(int i = 0 ; i < allActors.size(); i++) {
+			Base actor = (Base) allActors.get(i);
+			if (actor.id == _id) {
+				return actor;
+			}
+		}
+    }
+    
+     msgsrv busy(){
+     	delay(1);
+    	self.busy();
+    }
+}
+//------------------------------------------------------------------------
+reactiveclass CommunicationSubstrate extends Base(20){
+	CommunicationSubstrate(int _id) {
+		id = _id;
+	}
+	msgsrv publish(boolean data, int topic , int Lm, int life, int subscriberId) { // Transfer data request from client to the server
+			int csDelay = ?(1, 2); 
+			SubscribeInvoker si = (SubscribeInvoker) find(subscriberId);
+				si.publish( data, topic, Lm + csDelay , life - csDelay) after(csDelay);
+		}
+	msgsrv request(boolean data, int Lm, int responderInvokerId) { // Transfer data request from client to the server
+			int cs1Delay =  ?(1, 2); 
+			ResponderInvoker ri = (ResponderInvoker) find(responderInvokerId);
+			// Transfer this message to the corresponding responder
+				ri.request( data, Lm + cs1Delay) after(cs1Delay);
+		}
+	msgsrv response(boolean data, int Lm, int life, int requesterId) { // Transfer data reponse from server to the client
+			int cs2Delay =  ?(1, 2); // Network delay between server and commnunication substrate
+			RequestRequester rr = (RequestRequester) find(requesterId);
+			// Transfer this response to the corresponding requester
+				rr.response( data, (Lm + cs2Delay), (life-cs2Delay)) after(cs2Delay);
+	}
+	msgsrv excessLoadFailure(boolean data, int Lm, int requesterId) {
+		RequestRequester rr = (RequestRequester) find(requesterId);
+		rr.excessLoadFailure( data, Lm);
+	}
+	msgsrv timeOutFailure(boolean data, int Lm, int requesterId) {
+		RequestRequester rr = (RequestRequester) find(requesterId);
+		rr.timeOutFailure( data, Lm);
+	}
+	msgsrv dataUnavailableFailure(boolean data, int Lm, int requesterId) {
+		RequestRequester rr = (RequestRequester) find(requesterId);
+		rr.dataUnavailableFailure( data, Lm);
+	}
+}
+//------------------------------------------------------------------------------
+abstract reactiveclass Client extends Base(20){
+	msgsrv accepted(boolean data, int topic , int Lm) {self.busy();}
+	msgsrv fastPublicationFailure(boolean data, int topic , int Lm) {self.busy();} // Handle sending requests in short intervals (based on nReq)
+	msgsrv timeOutFailure(boolean data, int topic , int Lm) {self.busy();} // Response was not provided in the required time frame (based on lReq, lRes)	
+}
+//-------------------------Rebecs for Medical Devices---------------------------
+//******************************************************************************
+reactiveclass Capnometer extends Client(20){
+	knownrebecs {
+		PublishRequester PR_c;
+	}
+	statevars {
+	}
+	 Capnometer(int _id) {
+	 	id = _id;
+	    self.publish(3) after(3);
+	   // self.publish(1, 5) after(5);
+	   // self.publish(2, 10) after(10);
+	}
+	msgsrv publish(int afterDelay){
+	  	int pubDelay = ?(1, 2, 3);
+		//delay(pubDelay);
+		int life = 60;
+		boolean etco2 = ?(true, false);
+		boolean respiratoryRate =  ?(true, false);
+		PR_c.publish( etco2 , CAP_ETCO2,  pubDelay + afterDelay , life) after(pubDelay);
+		//PR_c.publish( respiratoryRate , CAP_RESPIRATORYRATE,  pubDelay + afterDelay , life);
+	}
+}
+//----------------------------------------------------------------------------
+reactiveclass Oximeter extends Client(20){
+	knownrebecs {
+		PublishRequester PR_o;
+	}
+	statevars {
+	}
+	 Oximeter(int _id) {
+	 	id = _id;
+	    self.publish(3);
+	  //  self.publish(4, 5) after(5);
+	   // self.publish(5, 10) after(10);
+	}
+	msgsrv publish(int afterDelay){
+	  	boolean spo2 =  ?(true, false);
+	  	boolean pulseRate =  ?(true, false);
+	    int pubDelay = ?(1, 2, 3);;
+		//delay(pubDelay);
+		int life = 60;
+		PR_o.publish( spo2 , OX_SPO2, pubDelay + afterDelay, life) after(pubDelay);
+		//PR_o.publish( pulseRate , OX_PULSERATE, pubDelay + afterDelay, life);
+	}
+}
+//--------------------------------------------------------------------------------
+reactiveclass MonitoringApp extends Base(20){ //monitoring application
+	knownrebecs{
+		SubscribeInvoker SI_c;
+		SubscribeInvoker SI_o;
+		RequestRequester pump; 
+	}
+	statevars {
+	int transmitionTime;
+	int TotalLatency;
+	}
+	 MonitoringApp(int _id) {
+	 	 id = _id;
+		 transmitionTime = 0;
+		 TotalLatency = 0;
+	}
+
+	msgsrv publish(boolean data, int topic, int Lm) {
+		int consumeDelay = ?(1, 2, 3); // Random reponse prepration delay
+		//delay(consumeDelay);
+		transmitionTime = Lm;
+		 if(topic == OX_SPO2 || topic == OX_PULSERATE){
+			if(data == false){
+				self.request( INACTIVE) after(consumeDelay);
+			}
+			else{
+				SI_o.consumed( data, topic, Lm + 3) after(consumeDelay);
+				self.request( ACTIVE) after(consumeDelay);
+				
+			}
+		}
+		if(topic == CAP_ETCO2 || topic == CAP_RESPIRATORYRATE){
+			if(data == false){
+				self.request( INACTIVE) after(consumeDelay);
+			}
+			else{
+				SI_c.consumed( data, topic, Lm + 5) after(consumeDelay);
+				self.request( ACTIVE) after(consumeDelay);
+				
+			}
+		}
+	}
+		msgsrv request(boolean command){
+		//delay(3);
+		pump.request( command, 3) after(3);
+	}
+
+	msgsrv response(boolean data, int Lm, int requesterId){
+		TotalLatency = Lm;
+		self.busy();
+	
+	} // Consume request response
+	//failures of req-res pattern
+	msgsrv fastRequestFailure(boolean data, int Lm, int responderId) {self.busy();} // Handle sending requests in short intervals (based on nReq)
+	msgsrv timeOutFailure(boolean data,int Lm,int responderId) {self.busy();} // Response was not provided in the required time frame (based on lReq, lRes)
+	msgsrv excessLoadFailure(boolean data,int Lm,int responderId) {self.busy();} // Responder is recieving requests too fast (based on nRes)
+	msgsrv dataUnavailableFailure(boolean data,int Lm,int responderId) {self.busy();} // A reponse with the required minimum life time could not be provided (based on rRes)
+	msgsrv staleData(boolean data, int Lm,int responderId){self.busy();}
+	//failures of pub-sub pattern
+	msgsrv slowConsumption(boolean data, int topic, int Lm){self.busy();}
+	msgsrv staleDataPub(boolean data, int Lm,int responderId){self.busy();}
+	msgsrv slowPublication(boolean data, int topic, int Lm){self.busy();}
+}
+//-------------------------------------------------------------------------------
+reactiveclass Pump extends Base(20){
+	knownrebecs{
+		ResponderInvoker RI;
+	}
+	statevars {}
+		 Pump(int _id) {
+		 	id = _id;
+		}
+	msgsrv response(boolean data, int Lm) {
+		int computeDelay = ?(1, 2); // Random reponse prepration delay
+		int life = 60;
+		//delay(computeDelay);
+		RI.response( data, Lm + computeDelay, life) after(computeDelay); // Add computation delay to network delay and send response through communication substrate
+	}
+}
+//-------------Publisher Subscriber Pattern for capnometer and oximeter-----------
+//********************************************************************************
+reactiveclass PublishRequester extends Base(20){  //check QOS properties
+	knownrebecs {
+		CommunicationSubstrate cs;
+	}
+	statevars {
+		//int lastPub; // Last request time, used for nReq comparison.
+		Timer lastPub;
+		int subscriberInvokerId;
+		int clientId;
+		int PR1Delay;
+		boolean theFirsttime; 
+	}
+	 PublishRequester(int _id, int _clientId, int _subscriberInvokerId) {
+		//lastPub = 0;
+		startTimer(lastPub);
+		theFirsttime = true;
+		id = _id;
+		clientId = _clientId;
+		subscriberInvokerId = _subscriberInvokerId;
+	}
+	msgsrv publish(boolean data, int topic , int Lm, int life) { // request data from responder through communication substrate
+		//int time = now; // Current time.
+		int passedTime = getTimerValue(lastPub);
+		stopTimer(lastPub);
+		PR1Delay = 3;
+		Client c = (Client) find(clientId);
+		if(passedTime  < NPUB & !(theFirsttime)){
+			c.fastPublicationFailure( data, topic, Lm);
+		}
+		else if(PR1Delay > LPUB) { // lReq has been violated
+			c.timeOutFailure( data, topic, Lm);
+			}
+		else {
+			startTimer(lastPub);
+			//lastPub = now;
+			cs.publish( data, topic,Lm + PR1Delay , life - PR1Delay, subscriberInvokerId) after(PR1Delay);
+			c.accepted( data, topic, Lm) after(PR1Delay);
+		}
+		theFirsttime = false;			
+	}
+}
+//--------------------------------------------------------------------------
+reactiveclass SubscribeInvoker extends Base(20){  //check QOS
+	knownrebecs {
+		
+	}
+	statevars {
+		//int lastPub; // Time that last data request was recieved, used for nRes comparison
+		Timer lastPub;
+		boolean theFirsttime;
+		int monitorId;
+		int publisherId;
+	}
+	 SubscribeInvoker(int _id, int _monitorId) {
+		//lastPub = 0;
+		startTimer(lastPub);
+		id = _id;
+		monitorId = _monitorId;
+		theFirsttime = true;
+	}
+	//responder to requester
+	msgsrv publish(boolean data, int topic, int Lm , int life) { // Send request response through communication substrate
+		int SI1Delay;
+		SI1Delay = 2; 
+		//int time = now;
+		int passedTime = getTimerValue(lastPub);
+		stopTimer(lastPub);
+		Lm = Lm + SI1Delay;
+		MonitoringApp ma = (MonitoringApp) find(monitorId);
+		if (passedTime < NSUB & !(theFirsttime)) { // Request has arrived too fast too be handled
+			self.drop( data, topic,Lm);
+		} 
+		else if (passedTime > XSUB) { // Request has arrived too fast too be handled
+			ma.slowPublication( data, topic,Lm);
+		} 
+		else if (life < RSUB || Lm > RPUB) { 
+			ma.staleDataPub( data, topic,Lm);
+		} 
+		else {
+			startTimer(lastPub);
+			//lastPub = now;
+			ma.publish( data, topic, Lm) after(SI1Delay); // Ask service for data response
+		}
+		theFirsttime = false;
+	}
+	//requester to responder
+	msgsrv consumed(boolean data, int topic , int Lm) { // Receive provided response and deliver it to the requester throught communication substrate
+		//int time = now;
+		int passedTime = getTimerValue(lastPub);
+		stopTimer(lastPub);
+		int SI2Delay;
+		int unConsumed = 0;
+		SI2Delay = 3; 
+		MonitoringApp ma = (MonitoringApp) find(monitorId);
+		if (passedTime > LSUB) { //  Response was not provided in lRes time units
+			unConsumed += 1;
+			 if(unConsumed > consumptionTolerance){	
+			 ma.slowConsumption( data, topic ,Lm + SI2Delay);
+			 unConsumed = 0;
+		}	
+	}
+}
+	msgsrv drop(boolean data, int topic,int Lm){self.busy();}
+}
+//-----------------------------------------------------------------------------
+//-------------Requester Responder Pattern for monitoring application-----------
+//*****************************************************************************
+reactiveclass RequestRequester extends Base(20){  //check QOS properties
+	knownrebecs {
+		CommunicationSubstrate cs;
+	}
+	statevars {
+		//int lastReq; // The time that a response was requested, used for lReq comparison. // TODO: This should be stored per meesage, but for now it keeps track of last request and -1 means that the last request is not waiting a reponse
+		Timer lastReq;
+		boolean theFirsttime;
+		int responderInvokerId;
+		int clientId;
+	}
+	 RequestRequester(int _id, int _clientId, int _responderInvokerId) {
+		//lastReq = 0;
+		startTimer(lastReq);
+		id = _id;
+		clientId = _clientId;
+		responderInvokerId = _responderInvokerId;
+		theFirsttime = true;
+	}
+	msgsrv request(boolean data, int Lm) { // request data from responder through communication substrate
+		int RR1Delay; 
+		RR1Delay = 2;
+		//int time = now;
+		int passedTime = getTimerValue(lastReq);
+		stopTimer(lastReq);
+		MonitoringApp ma = (MonitoringApp) find(clientId);
+		if(passedTime < NREQ & !(theFirsttime)){
+			ma.fastRequestFailure( data, Lm + RR1Delay, responderInvokerId);
+		}
+		else {
+			//thisReqTime[seq] = now;
+			//lastReq = now;
+			startTimer(lastReq);
+			cs.request( data, Lm + RR1Delay, responderInvokerId) after(RR1Delay);
+		}
+		theFirsttime = false;
+	}
+	msgsrv response(boolean data, int Lm, int life) { // send back response to the client
+		boolean canConsume = true; // Whether this message usable by the client
+		int RR2Delay;
+		RR2Delay = 2;
+		Lm = Lm + RR2Delay;
+		//int time = now;
+		int passedTime = getTimerValue(lastReq);
+		stopTimer(lastReq);
+		MonitoringApp ma = (MonitoringApp) find(clientId);
+		if (life > 0 && life < RREQ) { // Remaining message life time is not enough
+			ma.staleData( data, Lm, responderInvokerId);
+			canConsume = false;
+		}
+		else if(passedTime >= LREQ) { // lReq has been violated
+			ma.timeOutFailure( data, Lm, responderInvokerId);
+		}
+		else if(canConsume  && RR2Delay < LREQ) { // rReq has been met, it has not timed out, and lReq has also been met
+			ma.response( data, Lm, responderInvokerId) after(RR2Delay);
+		}
+	}
+	msgsrv excessLoadFailure(boolean data, int Lm){
+	    MonitoringApp ma = (MonitoringApp) find(clientId);
+		ma.excessLoadFailure( data, Lm, responderInvokerId);
+	}
+	msgsrv timeOutFailure(boolean data, int Lm){
+		MonitoringApp ma = (MonitoringApp) find(clientId);
+		ma.timeOutFailure( data, Lm, responderInvokerId);
+	}
+	msgsrv dataUnavailableFailure(boolean data, int Lm){
+		MonitoringApp ma = (MonitoringApp) find(clientId);
+		ma.dataUnavailableFailure( data, Lm, responderInvokerId);
+	}
+}
+//-----------------------------------------------------------------------------
+reactiveclass ResponderInvoker extends Base(20){  //check QOS
+	knownrebecs {
+		CommunicationSubstrate cs;
+	}
+	statevars {
+		//int lastReq; // Time when a request was send, used for lRes comparison // TODO: This should be stored per meesage, but for now it keeps track of last request and -1 means nothing exists
+		Timer lastReq;
+		int pumpId;
+		int requesterId;
+	}
+	 ResponderInvoker(int _id, int _pumpId, int _requesterId) {
+	 	//lastReq = 0;
+	 	startTimer(lastReq);
+		id = _id;
+		pumpId = _pumpId;
+		requesterId = _requesterId;
+	}
+	//responder to requester
+	msgsrv request(boolean data, int Lm) { // Send request response through communication substrate
+		int RI1Delay;
+		RI1Delay = 3; 
+		//int time = now;
+		int passedTime = getTimerValue(lastReq);
+		stopTimer(lastReq);
+		Lm = Lm + RI1Delay;
+		Pump p = (Pump) find(pumpId);
+		if (passedTime < NRES) { // Request has arrived too fast too be handled
+			cs.excessLoadFailure( data, Lm, requesterId);
+		} 
+		else {
+			//thisReqTime[seq] = now;
+			//lastReq = now;
+			startTimer(lastReq);
+			p.response( data, Lm) after(RI1Delay); // Ask service for data response
+		}
+	}
+	//requester to responder
+	msgsrv response(boolean data, int Lm, int life) { // Receive provided response and deliver it to the requester throught communication substrate
+		//int time = now;
+		int passedTime = getTimerValue(lastReq);
+		stopTimer(lastReq);
+		int RI2Delay;
+		RI2Delay = 2; 
+		if (life < RRES) { // Reponse life time can not comply with rRes any more
+			cs.dataUnavailableFailure( data, Lm + RI2Delay, requesterId);
+		}
+		else if (passedTime > LRES) { //  Response was not provided in lRes time units
+			cs.timeOutFailure( data, Lm + RI2Delay, requesterId);
+		}
+		else { // Recieved response is still valid
+			cs.response( data, Lm + RI2Delay, life - RI2Delay, requesterId) after(RI2Delay);	
+		}	
+	}
+}
+//-------------------------------------------------------------
+main { 
+	Capnometer c(pr_c):(0);
+	PublishRequester pr_c(cs):(1, 0, 2);
+	SubscribeInvoker si_c():(2, 10);
+	//
+	Oximeter o(pr_o):(5);
+	PublishRequester pr_o(cs):(6, 5, 7);
+    SubscribeInvoker si_o():(7, 10);
+	//
+	CommunicationSubstrate cs():(12);
+	//
+	MonitoringApp ma(si_c, si_o, rr):(10);
+	RequestRequester rr(cs):(11, 10, 13);
+	ResponderInvoker ri(cs):(13, 14, 11);
+	Pump p(ri):(14);
+}
