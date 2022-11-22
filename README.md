@@ -9,3 +9,10 @@ time limit of the system and its components. In most previously carried out stud
 
 ## Technologies
 First, I had to get a good understanding of Rebeca modeling language, which is very similar to `Java`. Then, I made changes to the compiled `C++` model checking codes to account for timed-difference between states. 
+
+
+## Best thesis award
+Unfortunately, this one is in Persian!
+
+
+<img src="https://github.com/maancham/Rebeca-Timed-Actors/blob/main/bachelor%20nomination.jpg" width="500" height="600">
